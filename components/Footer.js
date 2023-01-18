@@ -8,6 +8,8 @@ import {
 } from "react-icons/ai";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__container}>
@@ -57,7 +59,7 @@ export default function Footer() {
           >
             <AiOutlineInstagram />
           </a>
-          <p class="footer__text">© 2022 · Franklin Assa</p>
+          <p class="footer__text">{year} · Franklin Assa</p>
         </div>
       </div>
     </footer>
