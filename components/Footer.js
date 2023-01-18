@@ -16,6 +16,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/franklin-assa/"
             class={styles.footer__social}
             target="_blank"
+            rel="noreferrer"
             title="LinkedIn"
           >
             <GrLinkedinOption />
@@ -24,6 +25,7 @@ export default function Footer() {
             href="https://github.com/franklinnnn"
             class={styles.footer__social}
             target="_blank"
+            rel="noreferrer"
             title="GitHub"
           >
             <AiFillGithub />
@@ -32,6 +34,7 @@ export default function Footer() {
             href="https://codepen.io/franklinnnn/"
             class={styles.footer__social}
             target="_blank"
+            rel="noreferrer"
             title="CodePen"
           >
             <AiOutlineCodepen />
@@ -40,6 +43,7 @@ export default function Footer() {
             href="https://twitter.com/franklin_assa"
             class={styles.footer__social}
             target="_blank"
+            rel="noreferrer"
             title="Twitter"
           >
             <AiOutlineTwitter />
@@ -48,6 +52,7 @@ export default function Footer() {
             href="https://www.instagram.com/boykunnn/"
             class={styles.footer__social}
             target="_blank"
+            rel="noreferrer"
             title="Instagram"
           >
             <AiOutlineInstagram />

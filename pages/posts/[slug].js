@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import styles from "@/styles/Slug.module.css";
 import { GraphQLClient, gql } from "graphql-request";
+import Image from "next/image";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 
@@ -74,6 +75,11 @@ export default function BlogPost({ post }) {
             <h3>
               <AiOutlineCalendar /> {post.datePublished}
             </h3>
+            {/* <Image
+              src={post.coverPhoto.url}
+              className={styles.cover}
+              alt={post.title}
+            /> */}
             <img
               src={post.coverPhoto.url}
               className={styles.cover}
@@ -85,11 +91,11 @@ export default function BlogPost({ post }) {
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: post.content.html }}
           ></div>
-          <div className={styles.back}>
+          {/* <div className={styles.back}>
             <a href="javascript:history.go(-1)">
               <HiOutlineArrowLeft /> <span>Back</span>
             </a>
-          </div>
+          </div> */}
         </div>
 
         <Footer />
