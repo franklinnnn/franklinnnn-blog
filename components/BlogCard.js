@@ -8,24 +8,31 @@ export default function BlogCard({
   author,
   coverPhoto,
   datePublished,
+  tags,
   slug,
+  setFilter,
 }) {
   return (
     <div className={styles.card}>
-      <Link href={`/posts/${slug}`}>
-        <div className={styles.imgContainer}>
-          {/* <Image src={coverPhoto.url} alt={title}/> */}
-          <img src={coverPhoto.url} alt={title} />
-        </div>
+      <div className={styles.imgContainer}>
+        {/* <Image src={coverPhoto.url} alt={title}/> */}
+        <img src={coverPhoto.url} alt={title} />
+      </div>
 
-        <div className={styles.text}>
-          <h2>{title}</h2>
-          <h3>
-            <AiOutlineCalendar />
-            {datePublished}
-          </h3>
+      <div className={styles.text}>
+        <div className={styles.tags}>
+          {tags.map((tag) => (
+            <h4 onClick={() => setFilter(tag)}>#{tag}</h4>
+          ))}
         </div>
-      </Link>
+        <Link href={`/posts/${slug}`}>
+          <h2>{title}</h2>{" "}
+        </Link>
+        <h3>
+          <AiOutlineCalendar />
+          {datePublished}
+        </h3>
+      </div>
     </div>
   );
 }

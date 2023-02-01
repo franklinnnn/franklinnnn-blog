@@ -25,6 +25,7 @@ const QUERY = gql`
           url
         }
       }
+      tags
       content {
         html
       }
@@ -65,6 +66,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPost({ post }) {
+  console.log(post);
   return (
     <>
       <Head>

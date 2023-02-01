@@ -4,6 +4,7 @@ import { GraphQLClient, gql } from "graphql-request";
 import BlogCard from "@/components/BlogCard";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { useState } from "react";
 
 const graphcms = new GraphQLClient(
   process.env.NEXT_PUBLIC_HYGRAPH_CMS_ENDPOINT
@@ -25,6 +26,7 @@ const QUERY = gql`
           url
         }
       }
+      tags
       coverPhoto {
         url
       }
@@ -44,6 +46,17 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  const [filter, setFilter] = useState("");
+  const filteredPosts = posts.filter((post) => post.tags.includes(filter));
+
+  let postList = [];
+
+  if (filter === "") {
+    postList = posts;
+  } else {
+    postList = filteredPosts;
+  }
+
   return (
     <>
       <Head>
@@ -56,14 +69,19 @@ export default function Home({ posts }) {
       <main className={styles.home}>
         <h2 className={styles.home__title}>Blog</h2>
         <div className={`${styles.home__container} ${styles.grid}`}>
-          {posts.map((post) => (
+          <div className={styles.filter} onClick={() => setFilter("")}>
+            all posts
+          </div>
+          {postList.map((post) => (
             <BlogCard
               title={post.title}
               author={post.author}
               coverPhoto={post.coverPhoto}
               key={post.id}
               datePublished={post.datePublished}
+              tags={post.tags}
               slug={post.slug}
+              setFilter={setFilter}
             />
           ))}
         </div>
