@@ -22,7 +22,9 @@ export default function BlogCard({
       <div className={styles.text}>
         <div className={styles.tags}>
           {tags.map((tag) => (
-            <h4 onClick={() => setFilter(tag)}>#{tag}</h4>
+            <h4 key={tag} onClick={() => setFilter(tag)}>
+              #{tag}
+            </h4>
           ))}
         </div>
         <Link href={`/posts/${slug}`}>

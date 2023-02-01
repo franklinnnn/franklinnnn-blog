@@ -54,6 +54,17 @@
   background-color: var(--first-color);
 }
 
+.filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter span:hover {
+  color: var(--first-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .home {
     padding-top: 4rem;

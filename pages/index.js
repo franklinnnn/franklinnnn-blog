@@ -69,9 +69,17 @@ export default function Home({ posts }) {
       <main className={styles.home}>
         <h2 className={styles.home__title}>Blog</h2>
         <div className={`${styles.home__container} ${styles.grid}`}>
-          <div className={styles.filter} onClick={() => setFilter("")}>
-            all posts
-          </div>
+          {filter ? (
+            <div className={styles.filter}>
+              <div>
+                posts tagged <span>#{filter}</span>
+              </div>
+              <div onClick={() => setFilter("")}>
+                <span>see all posts</span>
+              </div>
+            </div>
+          ) : null}
+
           {postList.map((post) => (
             <BlogCard
               title={post.title}

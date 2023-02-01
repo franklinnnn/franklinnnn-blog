@@ -25,7 +25,7 @@ export default function Footer() {
           </a>
           <a
             href="https://github.com/franklinnnn"
-            class={styles.footer__social}
+            className={styles.footer__social}
             target="_blank"
             rel="noreferrer"
             title="GitHub"
@@ -34,7 +34,7 @@ export default function Footer() {
           </a>
           <a
             href="https://codepen.io/franklinnnn/"
-            class={styles.footer__social}
+            className={styles.footer__social}
             target="_blank"
             rel="noreferrer"
             title="CodePen"
@@ -43,7 +43,7 @@ export default function Footer() {
           </a>
           <a
             href="https://twitter.com/franklin_assa"
-            class={styles.footer__social}
+            className={styles.footer__social}
             target="_blank"
             rel="noreferrer"
             title="Twitter"
@@ -52,14 +52,14 @@ export default function Footer() {
           </a>
           <a
             href="https://www.instagram.com/boykunnn/"
-            class={styles.footer__social}
+            className={styles.footer__social}
             target="_blank"
             rel="noreferrer"
             title="Instagram"
           >
             <AiOutlineInstagram />
           </a>
-          <p class="footer__text">{year} · Franklin Assa</p>
+          <p className="footer__text">{year} · Franklin Assa</p>
         </div>
       </div>
     </footer>
